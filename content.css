@@ -1,3 +1,13 @@
 #leftCol {
 	background-color:lightblue;
 }
+.UFIRow.UFILikeSentence { /*Regular posts*/
+	background-color:lightblue;
+	color:blue;
+
+}
+/*Only working code is this below, for like sponsored posts. */
+._3399._1f6t._4_dr._20h5 {
+	background-color:lightblue;
+	color:blue;
+}
