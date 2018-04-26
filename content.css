@@ -9,3 +9,13 @@
 posts when you check Facebook news. */
 	display: none;
 }
+/*Refer to the top news story when you click a news story*/
+._3t54 { /* The shown emojis*/
+	display:none;
+}
+._4arz { /*Should be # of ppl who liked*/
+	display:none;	
+}
+
+
+/*NEXT STEP: # of likes and comments on big news thing;
