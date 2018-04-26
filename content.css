@@ -1,13 +1,11 @@
-#leftCol {
-	background-color:lightblue;
-}
 .UFIRow.UFILikeSentence { /*Regular posts*/
-	background-color:lightblue;
-	color:blue;
-
+	display: none;
 }
-/*Only working code is this below, for like sponsored posts. */
-._3399._1f6t._4_dr._20h5 {
-	background-color:lightblue;
-	color:blue;
+
+.UFIRow.UFIShareRow{ /*Blocks the "number of shares"*/
+	display: none;
+}
+._3399._1f6t._4_dr._20h5 {/*Addresses sponsored posts and "block"
+posts when you check Facebook news. */
+	display: none;
 }
