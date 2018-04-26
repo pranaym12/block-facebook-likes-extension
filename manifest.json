@@ -3,6 +3,7 @@
 	"name": "Facebook Likes Hider",
 	"version": "1.0",
 	"description": "Hides the likes on Facebook",
+	"permissions": ["*://*.facebook.com/*"],
 	"content_scripts": [
 		{
 			"matches": ["*://*.facebook.com/*"],
