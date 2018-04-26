@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+	"name": "Facebook Likes Hider",
+	"version": "1.0",
+	"description": "Hides the likes on Facebook",
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["jquery-3.3.1.min.js","content.js"],
+			"css": ["content.css"],
+			"run_at": "document_end"
+		}
+	],
+	"icons": {
+		"128": "icon128.png",
+		"48": "icon48.png",
+		"16": "icon16.png"
+	},
+	"browser_action": {
+		"default_icon": "icon16.png",
+		"default_title": "Word Converter"
+	}
+}
