@@ -3,18 +3,15 @@
 
 }
 
-/*SPONSORED*/
-._3399._1f6t._4_dr._20h5 {/*Addresses sponsored posts and "block"
-posts when you check Facebook news. */
+/*SPONSORED POSTS, block posts, and TOP NEWS STORY*/
+._3399._1f6t._4_dr._20h5 {
 /*Removes entire line, including likes, comments, shares, and views.*/
+/*sponsored posts, block posts, and top news*/
 }
-._3emk._401_{
-	/*Just the emoji on a sponsored post*/
-}
-
-/*Refer to the top news story when you click a news story*/
 ._3t54 { /* The shown emojis*/
+	display:none;
 }
 ._1g5v{/*Removes number of people who like a post*/
+	/*applies to top news post AND sponsored posts*/
 	display:none;
 }
