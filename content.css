@@ -1,16 +1,20 @@
 .UFIRow.UFILikeSentence { /*Regular posts*/
-	display: none;
+	display:none;
+
 }
 
-
+/*SPONSORED*/
 ._3399._1f6t._4_dr._20h5 {/*Addresses sponsored posts and "block"
 posts when you check Facebook news. */
-	display: none;
+/*Removes entire line, including likes, comments, shares, and views.*/
 }
+._3emk._401_{
+	/*Just the emoji on a sponsored post*/
+}
+
 /*Refer to the top news story when you click a news story*/
 ._3t54 { /* The shown emojis*/
-	display:none;
 }
-._1g5v{/*Could potentially be # of ppl who liked*/
+._1g5v{/*Removes number of people who like a post*/
 	display:none;
 }
