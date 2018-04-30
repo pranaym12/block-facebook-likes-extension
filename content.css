@@ -7,8 +7,7 @@
 	/*successfully blocks the LIKE#! on all posts*/
 	display: none;
 }
-
-/*block like #s on COMMENTS of ALL POSTS*/
+/*block like #s on COMMENTS*/
 .UFICommentLikeButton{
 	/*successfully removes LIKE# FROM COMMENTS (not like-emoji)*/
 	display: none;
