@@ -1,6 +1,5 @@
 .UFIRow.UFILikeSentence { /*Regular posts*/
-	display:none;
-
+	/*display:none;*/
 }
 
 /*SPONSORED POSTS, block posts, and TOP NEWS STORY*/
@@ -8,10 +7,10 @@
 /*Removes entire line, including likes, comments, shares, and views.*/
 /*sponsored posts, block posts, and top news*/
 }
-._3t54 { /* The shown emojis*/
-	display:none;
+._3t54 { /* The shown emojis*/ /*removes emojis on comments too D:*/
+	
 }
 ._1g5v{/*Removes number of people who like a post*/
 	/*applies to top news post AND sponsored posts*/
-	display:none;
+	
 }
