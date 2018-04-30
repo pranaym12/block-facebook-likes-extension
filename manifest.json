@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Facebook Likes Hider",
 	"version": "1.0",
-	"description": "Hides the likes on Facebook",
+	"description": "Hides the number of likes on Facebook posts and comments",
 	"permissions": ["*://*.facebook.com/*"],
 	"content_scripts": [
 		{
@@ -19,6 +19,14 @@
 	},
 	"browser_action": {
 		"default_icon": "icon16.png",
-		"default_title": "Word Converter"
-	}
+		"default_title": "Facebook Likes Hider",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["eventPage.js"],
+		"persistent": false
+	},
+	"permissions": [
+		"storage"
+	]
 }
