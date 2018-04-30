@@ -1,16 +1,46 @@
-.UFIRow.UFILikeSentence { /*Regular posts*/
-	/*display:none;*/
+/*block like numbers, but not emoji*/
+._4arz{ 
+	/*successfully blocks the LIKE-NAMES automatically shown on all posts*/
+	display: none;
+}
+._1g5v{
+	/*successfully blocks the LIKE#! on all posts*/
+	display: none;
 }
 
-/*SPONSORED POSTS, block posts, and TOP NEWS STORY*/
-._3399._1f6t._4_dr._20h5 {
-/*Removes entire line, including likes, comments, shares, and views.*/
-/*sponsored posts, block posts, and top news*/
+/*block like #s on COMMENTS of ALL POSTS*/
+.UFICommentLikeButton{
+	/*successfully removes LIKE# FROM COMMENTS (not like-emoji)*/
+	display: none;
 }
-._3t54 { /* The shown emojis*/ /*removes emojis on comments too D:*/
+
+/*BLOCK ENTIRE LIKE BAR, INCLUDING EMOJIS*/
+.UFIRow.UFILikeSentence { /*Regular posts: ENTIRE BAR including emoji and #s*/
+	/*display:none;*/
+
+}
+._3399._1f6t._4_dr._20h5 {
+	/*sponsored posts, block posts, and top news*/
+	/*Removes entire line, including likes, comments, shares, and views.*/
+	
+}
+.UFICommentReactionsBling{
+	/*Comments: remove LIKE # and LIKE EMOJI*/
+	
+}
+
+/*MISCELLANEOUS*/
+._2x4v{/* does NOTHING: like #s on regular posts*/
+}
+._10lp{
+	/*coomments: Does nothing*/
+}
+/*MISC*/
+._3t54 { /* Remove all shown emojis on posts and comments too D:*/
 	
 }
 ._1g5v{/*Removes number of people who like a post*/
 	/*applies to top news post AND sponsored posts*/
+	/*Mostly works, but sometimes a few letters are left off*/
 	
 }
