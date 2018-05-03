@@ -1,6 +1,8 @@
 $(function(){
+	//Check for existing stored values, and set text in popup to that
 	chrome.storage.sync.get(['clickNumber', 'isClicked'], function(internal){
-		if(internal.clickNumber){
+		//If clickNumber or truthHeader already exists, change the text to it
+		if(internal.clickNumber){ 
 			$('#clickCounter').text("Number of clicks: " + internal.clickNumber);
 		}
 		if(internal.isClicked){
@@ -8,12 +10,14 @@ $(function(){
 		}
 	});
 
+	//If the button is clicked, increment the clickNumber and toggle isClicked
 	$("button[name='commentsToggleButton'").click(function(){
 		console.log("Hello");
 
 		chrome.storage.sync.get(['clickNumber', 'isClicked'], function(internal){
-			var newIsClicked = true;
 			var newClickNumber = 1;
+			var newIsClicked = true;
+			//Set the new values to the old values /if they exist/
 			if(internal.clickNumber){
 				newClickNumber += internal.clickNumber; 
 			}
@@ -21,12 +25,12 @@ $(function(){
 				newIsClicked = !internal.isClicked;
 			}
 
+			//Store the new values for clickNumber and isClicked
 			chrome.storage.sync.set({'clickNumber':newClickNumber, 'isClicked':newIsClicked});
+			//DIsplay the new values on the popup
 			$('#clickCounter').text("Number of clicks: " + newClickNumber);
 			$('#truthHeader').text(newIsClicked.toString());
 
 		});
-		
-
 	});
 });
