@@ -33,4 +33,10 @@ $(function(){
 
 		});
 	});
+
+	$("button[name='resetButton']").click(function(){
+		chrome.storage.sync.set({'clickNumber':0, 'isClicked':false});
+		$('#clickCounter').text("Number of clicks: " + 0);
+		$('#truthHeader').text(false.toString());
+	});
 });
