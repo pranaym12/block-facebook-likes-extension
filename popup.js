@@ -3,10 +3,10 @@ $(function(){
 	chrome.storage.sync.get(['postsClicked', 'commentsClicked'], function(internal){
 		//If clickNumber or commentsTruthDiv already exists, change the text to it
 		if(internal.postsClicked){ 
-			$('#postsTruthDiv').text("Posts: " + internal.postsClicked.toString());
+			$('#postsTruthDiv').text(internal.postsClicked.toString());
 		}
 		if(internal.commentsClicked){
-			$('#commentsTruthDiv').text("Comments" + internal.commentsClicked.toString());
+			$('#commentsTruthDiv').text(internal.commentsClicked.toString());
 		}
 	});
 
