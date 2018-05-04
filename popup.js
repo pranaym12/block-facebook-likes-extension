@@ -1,12 +1,12 @@
 $(function(){
 	//Check for existing stored values, and set text in popup to that
 	chrome.storage.sync.get(['clickNumber', 'commentsClicked'], function(internal){
-		//If clickNumber or truthHeader already exists, change the text to it
+		//If clickNumber or commentsTruthDiv already exists, change the text to it
 		if(internal.clickNumber){ 
 			$('#clickCounter').text("Number of clicks: " + internal.clickNumber);
 		}
 		if(internal.commentsClicked){
-			$('#truthHeader').text(internal.commentsClicked.toString());
+			$('#commentsTruthDiv').text(internal.commentsClicked.toString());
 		}
 	});
 
@@ -29,7 +29,7 @@ $(function(){
 			chrome.storage.sync.set({'clickNumber':newClickNumber, 'commentsClicked':newCommentsClicked});
 			//DIsplay the new values on the popup
 			$('#clickCounter').text("Number of clicks: " + newClickNumber);
-			$('#truthHeader').text(newCommentsClicked.toString());
+			$('#commentsTruthDiv').text(newCommentsClicked.toString());
 			//Send a message to content script
 			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
 				chrome.tabs.sendMessage(tabs[0].id, {
@@ -43,6 +43,6 @@ $(function(){
 	$("button[name='resetButton']").click(function(){
 		chrome.storage.sync.set({'clickNumber':0, 'commentsClicked':false});
 		$('#clickCounter').text("Number of clicks: " + 0);
-		$('#truthHeader').text(false.toString());
+		$('#commentsTruthDiv').text(false.toString());
 	});
 });
