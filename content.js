@@ -1,9 +1,37 @@
+var isCommentsContent = false;
+var isPostsContent = false;
 //use event listener to see if comments enabled
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-	if(request.isCommented) {
-		console.log("Event listener: comments ARE clicked");
+	if(request.isCommented) {	
+		$('.UFICommentLikeButton').css('display', "none");
 	}
-	else {
-		console.log("Event listener: comments NOT clicked");
+	if(request.isCommented == false) {
+		$('.UFICommentLikeButton').css('display', "block");
+	}
+	if(request.isPosted){
+		$('._1g5v').css('display', "none");
+		$('._4arz').css('display', "none");		
+	}
+	if(request.isPosted ==false)
+		$('._1g5v').css('display', "block"); //not sure if it should be "inline"
+		$('._4arz').css('display', "block");
 	}
 });
+
+chrome.storage.sync.get(['commentsClicked', 'postsClicked'], function(internal){
+	isCommentsContent = internal.commentsClicked;
+	console.log("line 244, internal: " + internal.commentsClicked + "isC: " + isCommentsContent);
+	//For some weird reason, if statement doesn't work if I use "isCommentsContent"
+	if(internal.commentsClicked){  
+
+		$('.UFICommentLikeButton').css('display', "none");
+	}
+	//For some weird reason, if statement doesn't work if I use "isCommentsContent"
+	if(internal.postsClicked){  
+		$('._1g5v').css('display', "none");
+		$('._4arz').css('display', "none");
+	}
+});
+
+
+//document.getElementById("rightCol").style.display = 'none';
