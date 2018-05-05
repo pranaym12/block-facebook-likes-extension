@@ -1,26 +1,26 @@
 /*block like numbers, but not emoji*/
 ._4arz{ 
 	/*successfully blocks the LIKE-NAMES automatically shown on all posts*/
-	display: none;
+	
 }
 ._1g5v{
 	/*successfully blocks the LIKE#! on all posts*/
-	display: none;
+	
 }
-/*block like #s on COMMENTS*/
+
 .UFICommentLikeButton{
 	/*successfully removes LIKE# FROM COMMENTS (not like-emoji)*/
-	display: none;
+	
 }
 
 /*BLOCK ENTIRE LIKE BAR, INCLUDING EMOJIS*/
+
 .UFIRow.UFILikeSentence { /*Regular posts: ENTIRE BAR including emoji and #s*/
 	/*display:none;*/
-
 }
 ._3399._1f6t._4_dr._20h5 {
 	/*sponsored posts, block posts, and top news*/
-	/*Removes entire line, including likes, comments, shares, and views.*/
+	/*Removes entire line, including likes, #comments, #shares, and #views.*/
 	
 }
 .UFICommentReactionsBling{
