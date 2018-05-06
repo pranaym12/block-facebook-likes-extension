@@ -1,17 +1,16 @@
 $(function(){
 	//Check for existing stored values, and set text in popup to that
-	chrome.storage.sync.get(['post', 'comment'], 
-		function(internal){
+	chrome.storage.sync.get(['post', 'comment'], function(internal){
 		//If posts-/commentsTruthDiv already exist, change the text to the stored value
 		//Because it's a boolean, in order to check if it exists, must see if its type is 'undefined'
 		if(typeof internal.post !== 'undefined'){ 
 			if(internal.post == 0){
-				$('#postStatus').text("hidden");
+				$('#postStatus').text("unhidden");
 			}
-			elif(internal.post == 1){
-				$('#postStatus').text("likes are hidden");
+			else if(internal.post == 1){
+				$('#postStatus').text("only likes are hidden");
 			}
-			elif(internal.post == 2){
+			else if(internal.post == 2){
 				$('#postStatus').text("all is hidden");
 			}
 			else{
@@ -20,12 +19,12 @@ $(function(){
 		}
 		if(typeof internal.comment !== 'undefined'){
 			if(internal.post == 0){
-				$('#commentStatus').text("hidden");
+				$('#commentStatus').text("unhidden");
 			}
-			elif(internal.post == 1){
-				$('#commentStatus').text("likes are hidden");
+			else if(internal.post == 1){
+				$('#commentStatus').text("only likes are hidden");
 			}
-			elif(internal.post == 2){
+			else if(internal.post == 2){
 				$('#commentStatus').text("all is hidden");
 			}
 			else{
@@ -45,7 +44,9 @@ $(function(){
 			});				
 			//so message is sent to 0th tab
 		});
+		$('#postStatus').text("unhidden");
 	});
+});
 /*
 	//If the posts button is clicked, toggle the removal of likes on comments on or off 
 	//get the old stored val, and if it exists, new val is opposite bc button has been clicked once
