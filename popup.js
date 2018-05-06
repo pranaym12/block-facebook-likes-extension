@@ -4,7 +4,13 @@ $(function(){
 		//If posts-/commentsTruthDiv already exist, change the text to the stored value
 		//Because it's a boolean, in order to check if it exists, must see if its type is 'undefined'
 		if(typeof internal.postsClicked !== 'undefined'){ 
-			$('#postsTruthDiv').text(internal.postsClicked.toString());
+			//$('#postsTruthDiv').text(internal.postsClicked.toString());
+			if(internal.postsClicked){
+				$('#postsTruthDiv').text("(hidden)");
+			}
+			else{
+				$('#postsTruthDiv').text("(unhidden)");
+			}
 		}
 		if(typeof internal.commentsClicked !== 'undefined'){
 			$('#commentsTruthDiv').text(internal.commentsClicked.toString());
@@ -48,7 +54,12 @@ $(function(){
 			//Store the new values for postsClicked
 			chrome.storage.sync.set({'postsClicked':newPostsClicked});
 			//DIsplay the new values on the popup
-			$('#postsTruthDiv').text(newPostsClicked.toString());
+			if(newPostsClicked){
+				$('#postsTruthDiv').text("(hidden)");
+			}
+			else{
+				$('#postsTruthDiv').text("(unhidden)");
+			}
 			//Send a message to content script
 			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
 				//tabs is an array of all tabs that are ACTIVE and in the CURRENTWINDOW
