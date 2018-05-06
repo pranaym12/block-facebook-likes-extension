@@ -63,8 +63,8 @@ $(function(){
 	//Reset button resets everything
 	$("button[name='resetButton']").click(function(){
 		chrome.storage.sync.set({'commentsClicked':false, 'postsClicked':false});
-		$('#commentsTruthDiv').text(false.toString());
-		$('#postsTruthDiv').text(false.toString());
+		$('#commentsTruthDiv').text(false.toString()+" (unhidden)");
+		$('#postsTruthDiv').text(false.toString()+" (unhidden)");
 
 		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
 			chrome.tabs.sendMessage(tabs[0].id, {
