@@ -6,14 +6,20 @@ $(function(){
 		if(typeof internal.postsClicked !== 'undefined'){ 
 			//$('#postsTruthDiv').text(internal.postsClicked.toString());
 			if(internal.postsClicked){
-				$('#postsTruthDiv').text("(hidden)");
+				$('#postsTruthDiv').text("hidden");
 			}
 			else{
-				$('#postsTruthDiv').text("(unhidden)");
+				$('#postsTruthDiv').text("unhidden");
 			}
 		}
 		if(typeof internal.commentsClicked !== 'undefined'){
-			$('#commentsTruthDiv').text(internal.commentsClicked.toString());
+			//$('#commentsTruthDiv').text(internal.commentsClicked.toString());
+			if(internal.commentsClicked){
+				$('#commentsTruthDiv').text("hidden");
+			}
+			else{
+				$('#commentsTruthDiv').text("unhidden");
+			}
 		}
 	});
 
@@ -28,7 +34,13 @@ $(function(){
 			//Store the new values for clickNumber and commentsClicked
 			chrome.storage.sync.set({'commentsClicked':newCommentsClicked});
 			//DIsplay the new values on the popup
-			$('#commentsTruthDiv').text(newCommentsClicked.toString());
+			//$('#commentsTruthDiv').text(newCommentsClicked.toString());
+			if(newCommentsClicked){
+				$('#postsTruthDiv').text("hidden");
+			}
+			else{
+				$('#postsTruthDiv').text("unhidden");
+			}
 			//Send a message to content script
 
 			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
@@ -55,10 +67,10 @@ $(function(){
 			chrome.storage.sync.set({'postsClicked':newPostsClicked});
 			//DIsplay the new values on the popup
 			if(newPostsClicked){
-				$('#postsTruthDiv').text("(hidden)");
+				$('#postsTruthDiv').text("hidden");
 			}
 			else{
-				$('#postsTruthDiv').text("(unhidden)");
+				$('#postsTruthDiv').text("unhidden");
 			}
 			//Send a message to content script
 			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
