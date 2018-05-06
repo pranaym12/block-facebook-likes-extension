@@ -1,6 +1,9 @@
+
+/*
 $(function(){
 	//Check for existing stored values, and set text in popup to that
-	chrome.storage.sync.get(['postsClicked', 'commentsClicked'], function(internal){
+	chrome.storage.sync.get(['postsClicked', 'commentsClicked'], 
+		function(internal){
 		//If posts-/commentsTruthDiv already exist, change the text to the stored value
 		//Because it's a boolean, in order to check if it exists, must see if its type is 'undefined'
 		if(typeof internal.postsClicked !== 'undefined'){ 
@@ -97,3 +100,4 @@ $(function(){
 		});
 	});
 });
+*/
