@@ -1,5 +1,3 @@
-
-
 $(function(){
 	//Check for existing stored values, and set text in popup to that
 	chrome.storage.sync.get(['post', 'comment'], 
@@ -16,6 +14,9 @@ $(function(){
 			elif(internal.post == 2){
 				$('#postStatus').text("all is hidden");
 			}
+			else{
+				$('#postStatus').text("Error #1!");
+			}
 		}
 		if(typeof internal.comment !== 'undefined'){
 			if(internal.post == 0){
@@ -27,38 +28,25 @@ $(function(){
 			elif(internal.post == 2){
 				$('#commentStatus').text("all is hidden");
 			}
+			else{
+				$('#commentStatus').text("Error #2!");
+			}
 		}
 	});
-/*
-	//If the commentsToggle button is clicked, toggle the removal of likes on comments on or off 
-	//get the old stored val, and if it exists, new val is opposite bc button has been clicked once
-	$("button[name='commentsToggleButton'").click(function(){
-		var newCommentsClicked = true; //Will update new var based on old stored values
-		chrome.storage.sync.get(['commentsClicked'], function(internal){
-			if(typeof internal.commentsClicked !== 'undefined'){
-				newCommentsClicked = !internal.commentsClicked;
-			}
-			//Store the new values for clickNumber and commentsClicked
-			chrome.storage.sync.set({'commentsClicked':newCommentsClicked});
-			//DIsplay the new values on the popup
-			//$('#commentsTruthDiv').text(newCommentsClicked.toString());
-			if(newCommentsClicked){
-				$('#postsTruthDiv').text("hidden");
-			}
-			else{
-				$('#postsTruthDiv').text("unhidden");
-			}
-			//Send a message to content script
 
-			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
-				//tabs is an array of all tabs that are ACTIVE and in the CURRENTWINDOW
-				chrome.tabs.sendMessage(tabs[0].id, {
-					isCommented: newCommentsClicked
-				});				
-				//so message is sent to 0th tab
-			});
+	//get the old stored val, and if it exists, new val is opposite bc button has been clicked once
+	$("button[name='post-unhide'").click(function(){
+		var newPost = 0;
+		chrome.storage.sync.set({'comment': newPost});
+		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
+			//tabs is an array of all tabs that are ACTIVE and in the CURRENTWINDOW
+			chrome.tabs.sendMessage(tabs[0].id, {
+				postMsg: 0
+			});				
+			//so message is sent to 0th tab
 		});
 	});
+/*
 	//If the posts button is clicked, toggle the removal of likes on comments on or off 
 	//get the old stored val, and if it exists, new val is opposite bc button has been clicked once
 	$("button[name='postsToggleButton'").click(function(){
