@@ -37,6 +37,8 @@ $(function(){
 	//For each of the 6 buttons (3 each P and C) do the same thing:
 	//When clicked, set the corresponding val in storage to the new val
 	//and send a message to the content-script
+
+	//Buttons for posts
 	$("button[name='post-unhide'").click(function(){
 		var newPost = 0;
 		chrome.storage.sync.set({'post': newPost});
@@ -69,9 +71,9 @@ $(function(){
 		});
 		$('#postStatus').text("all is hidden");
 	});
-//Buttons for the Comments
 
-	//'Unhide comments' button
+
+	//Buttons for the Comments
 	$("button[name='comment-unhide'").click(function(){
 		var newComment = 0;
 		chrome.storage.sync.set({'comment': newComment});
