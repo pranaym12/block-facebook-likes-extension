@@ -31,17 +31,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 });
 
 chrome.storage.sync.get(['post', 'comment'], function(internal){
+	console.log("post: " + internal.post+", comment: "+internal.comment);
 	if(internal.post == 1){  
 		$('._1g5v').css('display', "none");
 		$('._4arz').css('display', "none");
 	}
 	//TODO == 2 for post and comments
-	if(request.commentMsg == 1){ //show emoji, not #likes
+	if(internal.comment == 1){ //show emoji, not #likes
+		console.log("comment: "+internal.comment+", console.log line41");
 		$('.UFICommentLikeButton').css('display', "none");
 		$('.UFICommentReactionsBling').css('display', "inline");
 	}
-	if(request.commentMsg == 2){//show emoji class, but remove class that contains emojis 
+	if(internal.comment == 2){//show emoji class, but remove class that contains emojis 
 		//	AND #likes
+		console.log("comment: "+internal.comment+", console.log line47");
 		$('.UFICommentLikeButton').css('display', "inline");
 		$('.UFICommentReactionsBling').css('display', "none");
 	}

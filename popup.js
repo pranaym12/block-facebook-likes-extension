@@ -19,13 +19,13 @@ $(function(){
 			}
 		}
 		if(typeof internal.comment !== 'undefined'){
-			if(internal.post == 0){
+			if(internal.comment == 0){
 				$('#commentStatus').text("unhidden");
 			}
-			else if(internal.post == 1){
+			else if(internal.comment == 1){
 				$('#commentStatus').text("likes hidden");
 			}
-			else if(internal.post == 2){
+			else if(internal.comment == 2){
 				$('#commentStatus').text("all is hidden");
 			}
 			else{
