@@ -17,19 +17,27 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	if(request.commentMsg == 0){
 		//this is the class that controls the # of likes shown on comments
 		$('.UFICommentLikeButton').css('display', "inline");
+		$('.UFICommentReactionsBling').css('display', "inline");
 	}
 	if(request.commentMsg == 1){
 		$('.UFICommentLikeButton').css('display', "none");
+		$('.UFICommentReactionsBling').css('display', "inline");
+	}
+	if(request.postMsg == 2){
+		$('.UFICommentLikeButton').css('display', "inline");
+		$('.UFICommentReactionsBling').css('display', "none");
+
 	}
 });
 
 chrome.storage.sync.get(['post', 'comment'], function(internal){
 	if(internal.post == 1){  
-		$('.UFICommentLikeButton').css('display', "none");
+		$('._1g5v').css('display', "none");
+		$('._4arz').css('display', "none");
 	}
 	//TODO == 2 for post and comments
 	if(internal.comment == 1){  
-		$('._1g5v').css('display', "none");
-		$('._4arz').css('display', "none");
+		$('.UFICommentLikeButton').css('display', "none");
+
 	}
 });
