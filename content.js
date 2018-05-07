@@ -27,7 +27,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 		//	AND #likes
 		$('.UFICommentLikeButton').css('display', "inline");
 		$('.UFICommentReactionsBling').css('display', "none");
-
 	}
 });
 
@@ -37,8 +36,13 @@ chrome.storage.sync.get(['post', 'comment'], function(internal){
 		$('._4arz').css('display', "none");
 	}
 	//TODO == 2 for post and comments
-	if(internal.comment == 1){  
+	if(request.commentMsg == 1){ //show emoji, not #likes
 		$('.UFICommentLikeButton').css('display', "none");
-
+		$('.UFICommentReactionsBling').css('display', "inline");
+	}
+	if(request.commentMsg == 2){//show emoji class, but remove class that contains emojis 
+		//	AND #likes
+		$('.UFICommentLikeButton').css('display', "inline");
+		$('.UFICommentReactionsBling').css('display', "none");
 	}
 });
