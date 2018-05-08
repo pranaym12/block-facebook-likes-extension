@@ -70,9 +70,9 @@ function insertEmptyLike(){
 
 	//GET COMMENTS WITH LIKES
 	//var commentsWithLikes = $('._10la._10lg._10lo._10lp');
+	//var commentsWithLikes = $('._10lo._10lp'); //successfully using jquery!
 	//var commentsWithLikes = document.getElementsByClassName('_10la').getElementsByClassName('_10lo _10lp');
-	//console.log(allComments.length+" - "+commentsWithLikes.length);
-
+	
 	//GET COMMENTS WITHOUT LIKES
 	var commentsWithNoLikes = $('._10lo:not(._10lp)');//jQuery filter out _10lg
 	console.log(commentsWithNoLikes.length);
