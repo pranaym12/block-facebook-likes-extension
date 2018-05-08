@@ -63,6 +63,27 @@ function refreshLikes(){
 	setTimeout(refreshLikes, 1000); 
 }
 
+function insertEmptyLike(){
+	//GET ALL COMMENTS
+	var allComments = document.getElementsByClassName('_10la');
+	//var allComments = $(._10la); //using jQuery!
+
+	//GET COMMENTS WITH LIKES
+	//var commentsWithLikes = $('._10la._10lg._10lo._10lp');
+	//var commentsWithLikes = document.getElementsByClassName('_10la').getElementsByClassName('_10lo _10lp');
+	//console.log(allComments.length+" - "+commentsWithLikes.length);
+
+	//GET COMMENTS WITHOUT LIKES
+	var commentsWithNoLikes = $('._10lo:not(._10lp)');//jQuery filter out _10lg
+	console.log(commentsWithNoLikes.length);
+	//var commentsWithNoLikes = document.querySelectorAll('._10lo:not(._10lp)');//unsuccessful JavaScript
+	
+	for(var i = 0; i < commentsWithNoLikes.length; i++) {
+		console.log(commentsWithNoLikes[i]);
+	}
+
+}
+
 function post0(){//post likes unhidden
 	$('._1g5v').css('display', "block");//names of specific-friends who've liked a post
 	$('._4arz').css('display', "block");//#of non-specificfriends who've liked a post
@@ -90,18 +111,11 @@ function comment0(){//If comment likes are unhidden
 function comment1(){//If comment like #s hidden
 	$('.UFICommentLikeButton').css('display', "none");
 	$('.UFICommentReactionsBling').css('display', "inline");
+
+	insertEmptyLike();	
 }
 function comment2(){//comment like# and like-emoji hidden
 	$('.UFICommentLikeButton').css('display', "inline");
 	$('.UFICommentReactionsBling').css('display', "none");
 }
 
-/*
-var num = 0;
-counter();
-function counter(){
-	console.log("count " + num);
-	num += 1;
-	setTimeout(counter, 1000);//Loads counter every 1s
-}
-*/
