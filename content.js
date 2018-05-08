@@ -72,7 +72,7 @@ function insertEmptyLike(){
 	//var commentsWithLikes = $('._10la._10lg._10lo._10lp');
 	//var commentsWithLikes = $('._10lo._10lp'); //successfully using jquery!
 	//var commentsWithLikes = document.getElementsByClassName('_10la').getElementsByClassName('_10lo _10lp');
-	
+
 	//GET COMMENTS WITHOUT LIKES
 	var commentsWithNoLikes = $('._10lo:not(._10lp)');//jQuery filter out _10lg
 	console.log(commentsWithNoLikes.length);
@@ -81,7 +81,6 @@ function insertEmptyLike(){
 	for(var i = 0; i < commentsWithNoLikes.length; i++) {
 		console.log(commentsWithNoLikes[i]);
 	}
-
 }
 
 function post0(){//post likes unhidden
