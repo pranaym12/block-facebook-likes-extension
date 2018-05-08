@@ -33,20 +33,30 @@ function refreshLikes(){
 		//If, during last session, user blocked something, it's stored in storage
 		//and retrieved and automatically blocked upon next startup
 		//console.log("post: " + internal.post+", comment: "+internal.comment);
+		if(internal.post == 0){
+			post0();
+		}
 		if(internal.post == 1){  
 			post1();
 		}
 		if(internal.post ==2){
 			post2();
 		}
-		if(internal.comment == 1){ //show emoji, not #likes
-			//console.log("comment: "+internal.comment+", console.log line41");
+		if(internal.comment == 0){
+			comment0();
+		}
+		if(internal.comment == 1){ 
 			comment1();
 		}
-		if(internal.comment == 2){//show emoji class, but remove class that contains emojis 
-			//	AND #likes
-			//console.log("comment: "+internal.comment+", console.log line47");
+		if(internal.comment == 2){
 			comment2();
+		}
+		//And in case they don't exist for some reason
+		if(!internal.post){
+			post0();
+		}
+		if(!internal.comment){
+			comment0();
 		}
 	});
 	//Every 1s, refreshLikes called. recursive timer

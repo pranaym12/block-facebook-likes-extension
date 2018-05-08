@@ -108,7 +108,8 @@ $(function(){
 	//Reset button
 	$("button[name='resetButton']").click(function(){
 		//Clears storage and updates text on popup
-		chrome.storage.sync.clear();
+		chrome.storage.sync.set({'comment':0, 'post': 0});
+		//chrome.storage.sync.clear();
 		$('#postStatus').text("text reset");
 		$('#commentStatus').text("text reset");
 		//Tell content script to unhide everything.
