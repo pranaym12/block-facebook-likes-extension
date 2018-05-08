@@ -37,34 +37,51 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	}
 });
 
-chrome.storage.sync.get(['post', 'comment'], function(internal){
-	//Get values from chrome storage
-	//Only runs on startup of page
-	//If, during last session, user blocked something, it's stored in storage
-	//and retrieved and automatically blocked upon next startup
+//Run refreshLikes on page load, to remove any likes based on prev setting
+//Then run every 1s so as more content load, that content is updated in <=1s
+refreshLikes();
+function refreshLikes(){
+	//Checks storage and updates page
+	chrome.storage.sync.get(['post', 'comment'], function(internal){
+		//Get values from chrome storage
+		//Only runs on startup of page
+		//If, during last session, user blocked something, it's stored in storage
+		//and retrieved and automatically blocked upon next startup
 
-	console.log("post: " + internal.post+", comment: "+internal.comment);
-	if(internal.post == 1){  
-		$('._1g5v').css('display', "none");
-		$('._4arz').css('display', "none");	
-		$('.UFIRow.UFILikeSentence').css('display', "block");
-		$('._3399._1f6t._4_dr._20h5').css('display',"block");
-	}
-	if(internal.post ==2){
-		$('._1g5v').css('display', "block");
-		$('._4arz').css('display', "block");
-		$('.UFIRow.UFILikeSentence').css('display', "none");
-		$('._3399._1f6t._4_dr._20h5').css('display',"none");
-	}
-	if(internal.comment == 1){ //show emoji, not #likes
-		console.log("comment: "+internal.comment+", console.log line41");
-		$('.UFICommentLikeButton').css('display', "none");
-		$('.UFICommentReactionsBling').css('display', "inline");
-	}
-	if(internal.comment == 2){//show emoji class, but remove class that contains emojis 
-		//	AND #likes
-		console.log("comment: "+internal.comment+", console.log line47");
-		$('.UFICommentLikeButton').css('display', "inline");
-		$('.UFICommentReactionsBling').css('display', "none");
-	}
-});
+		console.log("post: " + internal.post+", comment: "+internal.comment);
+		if(internal.post == 1){  
+			$('._1g5v').css('display', "none");
+			$('._4arz').css('display', "none");	
+			$('.UFIRow.UFILikeSentence').css('display', "block");
+			$('._3399._1f6t._4_dr._20h5').css('display',"block");
+		}
+		if(internal.post ==2){
+			$('._1g5v').css('display', "block");
+			$('._4arz').css('display', "block");
+			$('.UFIRow.UFILikeSentence').css('display', "none");
+			$('._3399._1f6t._4_dr._20h5').css('display',"none");
+		}
+		if(internal.comment == 1){ //show emoji, not #likes
+			//console.log("comment: "+internal.comment+", console.log line41");
+			$('.UFICommentLikeButton').css('display', "none");
+			$('.UFICommentReactionsBling').css('display', "inline");
+		}
+		if(internal.comment == 2){//show emoji class, but remove class that contains emojis 
+			//	AND #likes
+			//console.log("comment: "+internal.comment+", console.log line47");
+			$('.UFICommentLikeButton').css('display', "inline");
+			$('.UFICommentReactionsBling').css('display', "none");
+		}
+	});
+	//Every 1s, refreshLikes called. recursive timer
+	setTimeout(refreshLikes, 1000); 
+}
+/*
+var num = 0;
+counter();
+function counter(){
+	console.log("count " + num);
+	num += 1;
+	setTimeout(counter, 1000);//Loads counter every 1s
+}
+*/
