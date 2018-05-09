@@ -32,7 +32,7 @@ function refreshLikes(){
 		//Only runs on startup of page
 		//If, during last session, user blocked something, it's stored in storage
 		//and retrieved and automatically blocked upon next startup
-		//console.log("post: " + internal.post+", comment: "+internal.comment);
+		
 		if(internal.post == 0){
 			post0();
 		}
@@ -51,12 +51,14 @@ function refreshLikes(){
 		if(internal.comment == 2){
 			comment2();
 		}
-		//And in case they don't exist for some reason
+		
+		//On extension's installation, automatically hide all, before post
+		//	or comment are even set. Also hide all if storage is removed.
 		if(!internal.post){
-			post0();
+			post2();
 		}
 		if(!internal.comment){
-			comment0();
+			comment2();
 		}
 	});
 	//Every 1s, refreshLikes called. recursive timer
@@ -95,13 +97,3 @@ function comment2(){//comment like# and like-emoji hidden
 	$('.UFICommentLikeButton').css('display', "inline");
 	$('.UFICommentReactionsBling').css('display', "none");
 }
-
-/*
-var num = 0;
-counter();
-function counter(){
-	console.log("count " + num);
-	num += 1;
-	setTimeout(counter, 1000);//Loads counter every 1s
-}
-*/
