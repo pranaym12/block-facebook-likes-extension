@@ -51,12 +51,14 @@ function refreshLikes(){
 		if(internal.comment == 2){
 			comment2();
 		}
-		//And in case they don't exist for some reason
+		
+		//On extension's installation, automatically hide all, before post
+		//	or comment are even set. Also hide all if storage is removed.
 		if(!internal.post){
-			post0();
+			post2();
 		}
 		if(!internal.comment){
-			comment0();
+			comment2();
 		}
 	});
 	//Every 1s, refreshLikes called. recursive timer
