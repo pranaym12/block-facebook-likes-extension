@@ -29,35 +29,33 @@ function refreshLikes(){
 	//Checks storage and updates page
 	chrome.storage.sync.get(['post', 'comment'], function(internal){
 		//Get values from chrome storage
-		//Only runs on startup of page
 		//If, during last session, user blocked something, it's stored in storage
 		//and retrieved and automatically blocked upon next startup
-		
+
+		//However, if nothing has been set, automatically hide all
+		//	that's where the 2 else statements come in.		
 		if(internal.post == 0){
 			post0();
 		}
-		if(internal.post == 1){  
+		else if(internal.post == 1){  
 			post1();
 		}
-		if(internal.post ==2){
+		else if(internal.post ==2){
+			post2();
+		}
+		else{ //So on startup, all posts blocked
 			post2();
 		}
 		if(internal.comment == 0){
 			comment0();
 		}
-		if(internal.comment == 1){ 
+		else if(internal.comment == 1){ 
 			comment1();
 		}
-		if(internal.comment == 2){
+		else if(internal.comment == 2){
 			comment2();
 		}
-		
-		//On extension's installation, automatically hide all, before post
-		//	or comment are even set. Also hide all if storage is removed.
-		if(!internal.post){
-			post2();
-		}
-		if(!internal.comment){
+		else {//So on startup, all comments blocked
 			comment2();
 		}
 	});
