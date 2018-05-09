@@ -1,3 +1,18 @@
+function post0status(){
+	$('#postStatus').text("unhidden");
+}
+function post1status(){
+	$('#postStatus').text("likes hidden");
+}function post2status(){
+	$('#postStatus').text("all is hidden");
+}
+function comment0status(){
+	$('#commentStatus').text("unhidden");
+}function comment1status(){
+	$('#commentStatus').text("likes hidden");
+}function comment2status(){
+	$('#commentStatus').text("all is hidden");
+}
 $(function(){
 	//Check for existing stored values, and set text in popup to that
 	chrome.storage.sync.get(['post', 'comment'], function(internal){
@@ -6,13 +21,13 @@ $(function(){
 		//" !=='undefined' " is how I ensure that it exists, even if it's a boolean!
 		if(typeof internal.post !== 'undefined'){ 
 			if(internal.post == 0){
-				$('#postStatus').text("unhidden");
+				post0status();
 			}
 			else if(internal.post == 1){
-				$('#postStatus').text("likes hidden");
+				post1status();
 			}
 			else if(internal.post == 2){
-				$('#postStatus').text("all is hidden");
+				post2status();
 			}
 			else{
 				$('#postStatus').text("Error #1!");
@@ -20,13 +35,13 @@ $(function(){
 		}
 		if(typeof internal.comment !== 'undefined'){
 			if(internal.comment == 0){
-				$('#commentStatus').text("unhidden");
+				comment0status();
 			}
 			else if(internal.comment == 1){
-				$('#commentStatus').text("likes hidden");
+				comment1status();
 			}
 			else if(internal.comment == 2){
-				$('#commentStatus').text("all is hidden");
+				comment2status();
 			}
 			else{
 				$('#commentStatus').text("Error #2!");
@@ -49,7 +64,7 @@ $(function(){
 			});				
 			//so message is sent to 0th tab
 		});
-		$('#postStatus').text("unhidden");
+		post0status();
 	});
 	$("button[name='post-hide-likes'").click(function(){
 		var newPost = 1;
@@ -59,7 +74,7 @@ $(function(){
 				postMsg: 1
 			});				
 		});
-		$('#postStatus').text("likes hidden");
+		post1status();
 	});
 	$("button[name='post-hide-all'").click(function(){
 		var newPost = 2;
@@ -69,7 +84,7 @@ $(function(){
 				postMsg: 2
 			});				
 		});
-		$('#postStatus').text("all is hidden");
+		post2status();
 	});
 
 
@@ -82,7 +97,7 @@ $(function(){
 				commentMsg: 0
 			});				
 		});
-		$('#commentStatus').text("unhidden");
+		comment0status();
 	});
 	$("button[name='comment-hide-likes'").click(function(){
 		var newComment = 1;
@@ -92,7 +107,7 @@ $(function(){
 				commentMsg: 1
 			});				
 		});
-		$('#commentStatus').text("likes hidden");
+		comment1status();
 	});
 	$("button[name='comment-hide-all'").click(function(){
 		var newComment = 2;
@@ -102,6 +117,6 @@ $(function(){
 				commentMsg: 2
 			});				
 		});
-		$('#commentStatus').text("all is hidden");
+		comment2status();
 	});
 });
