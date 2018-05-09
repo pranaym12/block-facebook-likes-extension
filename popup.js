@@ -104,21 +104,4 @@ $(function(){
 		});
 		$('#commentStatus').text("all is hidden");
 	});
-
-	//Reset button
-	$("button[name='resetButton']").click(function(){
-		//Clears storage and updates text on popup
-		chrome.storage.sync.set({'comment':0, 'post': 0});
-		//chrome.storage.sync.clear();
-		$('#postStatus').text("text reset");
-		$('#commentStatus').text("text reset");
-		//Tell content script to unhide everything.
-		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
-			chrome.tabs.sendMessage(tabs[0].id, {
-				postMsg: 0,
-				commentMsg: 0,
-			});
-		});
-	});
-
 });
