@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "Hide Facebook Likes",
 	"version": "1.0",
-	"description": "Hides other people's likes from your Facebook for a better experience.",
+	"description": "Hide other people's likes from your Facebook for a better experience.",
 	"permissions": ["*://*.facebook.com/*"],
 	"content_scripts": [
 		{
