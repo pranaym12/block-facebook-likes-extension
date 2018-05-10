@@ -1,14 +1,20 @@
 /*Segmented Control source: Tom Sterritt https://codepen.io/tomsterritt/pen/sknpB */
-.container{padding:20px;margin:20px 0;}
-.bg{background:#167efb;color:#167efb;}
+.container{
+    /*padding:20px;*/
+    /*margin:20px 0;*/
+}
+.bg{
+    background:#167efb;
+    color:#167efb;
+}
 
 /* Radio group */
 .segmented {
     display:flex;
     flex-flow:row wrap;
     box-sizing:border-box;
-    font-family:"Helvetica Neue";
-    font-size:90%;
+    /*font-family:"Helvetica";
+    font-size:120%;*/
     text-align:center;
 }
 .segmented label {
