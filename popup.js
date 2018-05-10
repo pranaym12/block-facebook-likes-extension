@@ -6,14 +6,14 @@ function post0status(){
 	$('#post2').removeClass("checked");	*/
 	updateSC("post", 0);
 }function post1status(){
-	$('#postStatus').text("likes hidden");
+	$('#postStatus').text("only likes hidden");
 	/*$("#post1").checked = true; 
 	$('#post1').parent().addClass("checked");
 	$('#post0').removeClass("checked");
 	$('#post2').removeClass("checked");*/
 	updateSC("post", 1);
 }function post2status(){
-	$('#postStatus').text("all is hidden");
+	$('#postStatus').text("all hidden");
 	/*$("#post2").checked = true;
 	$('#post2').parent().addClass("checked");
 	$('#post1').removeClass("checked");
@@ -27,14 +27,14 @@ function post0status(){
 	$('#comment2').removeClass("checked");*/
 	updateSC("comment", 0);
 }function comment1status(){
-	$('#commentStatus').text("likes hidden");
+	$('#commentStatus').text("only likes hidden");
 	/*$("#comment1").checked = true;
 	$('#comment1').parent().addClass("checked");
 	$('#comment0').removeClass("checked");
 	$('#comment2').removeClass("checked");*/
 	updateSC("comment", 1);
 }function comment2status(){
-	$('#commentStatus').text("all is hidden");
+	$('#commentStatus').text("all  hidden");
 	/*$("#comment2").checked = true;
 	$('#comment2').parent().addClass("checked");
 	$('#comment1').removeClass("checked");
