@@ -1,13 +1,27 @@
 function post0status(){
 	$('#postStatus').text("unhidden");
+	$("#post0").checked = true;
+
+	$('#post0').parent().addClass("checked");
+	$('#post1').removeClass("checked");
+	$('#post2').removeClass("checked");	
 }function post1status(){
 	$('#postStatus').text("likes hidden");
+	$("#post1").checked = true;
+
+	$('#post1').parent().addClass("checked");
+	$('#post0').removeClass("checked");
+	$('#comment2').removeClass("checked");
 }function post2status(){
 	$('#postStatus').text("all is hidden");
+	$("#post2").checked = true;
+
+	$('#post2').parent().addClass("checked");
+	$('#comment1').removeClass("checked");
+	$('#comment0').removeClass("checked");
 }
 function comment0status(){
 	$('#commentStatus').text("unhidden");
-	//$("#comment0").prop("checked", true);
 	$("#comment1").checked = true;
 
 	$('#comment0').parent().addClass("checked");
@@ -15,7 +29,6 @@ function comment0status(){
 	$('#comment2').removeClass("checked");
 }function comment1status(){
 	$('#commentStatus').text("likes hidden");
-	//$("#comment1").prop("checked", true);
 	$("#comment1").checked = true;
 
 	$('#comment1').parent().addClass("checked");
@@ -23,7 +36,6 @@ function comment0status(){
 	$('#comment2').removeClass("checked");
 }function comment2status(){
 	$('#commentStatus').text("all is hidden");
-	//$("#comment2").prop("checked", true);
 	$("#comment2").checked = true;
 
 	$('#comment2').parent().addClass("checked");
@@ -71,7 +83,7 @@ $(function(){
 	//and send a message to the content-script
 
 	//Buttons for posts
-	$("button[name='post-unhide'").click(function(){
+	$('#post0').click(function(){
 		var newPost = 0;
 		chrome.storage.sync.set({'post': newPost});
 		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
@@ -83,7 +95,7 @@ $(function(){
 		});
 		post0status();
 	});
-	$("button[name='post-hide-likes'").click(function(){
+	$('#post1').click(function(){
 		var newPost = 1;
 		chrome.storage.sync.set({'post': newPost});
 		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
@@ -93,7 +105,7 @@ $(function(){
 		});
 		post1status();
 	});
-	$("button[name='post-hide-all'").click(function(){
+	$('#post2').click(function(){
 		var newPost = 2;
 		chrome.storage.sync.set({'post': newPost});
 		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
@@ -106,7 +118,6 @@ $(function(){
 
 	//Buttons for the Comments
 	$('#comment0').click(function(){
-
 		var newComment = 0;
 		chrome.storage.sync.set({'comment': newComment});
 		chrome.tabs.query({active:true, currentWindow:true},function(tabs){

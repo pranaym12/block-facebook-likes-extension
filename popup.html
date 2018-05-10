@@ -12,11 +12,13 @@
 		<h1>Facebook Likes Hider</h1>
 		<div class = "post-group">
 			<h2>Posts</h2>	
-			
-			<button name="post-unhide">Show All Likes</button>
-			<button name="post-hide-likes">Hide Partially</button>
-			<button name="post-hide-all">Totally Hide Likes</button>
-
+			<div class ="container">
+				<div class="segmented">
+					<label><input type="radio" id="post0" name="segmented" />Show All</label>
+					<label><input type="radio" id="post1" name="segmented" />Hide Partially</label>
+					<label><input type="radio" id="post2" name="segmented" />Hide all</label>
+				</div>
+			</div>
 			<h3 id="postHeader">Posts' likes are: <span id="postStatus">all hidden.</span></h3>
 		</div>
 		<div class = "comment-group">
@@ -25,7 +27,7 @@
 				<div class ="segmented">
 					<label><input type="radio" id="comment0" name="segmented" />Show All</label>
 					<label><input type="radio" id="comment1" name="segmented" />Hide Partially</label>
-					<label ><input type="radio" id="comment2" name="segmented" />Hide All</label>
+					<label><input type="radio" id="comment2" name="segmented" />Hide All</label>
 				</div>
 			</div>
 			<h3 id="commentHeader">Comments' likes are: <span id="commentStatus">all hidden.</span></h3>
