@@ -1,6 +1,12 @@
 /*Segmented Control source: Tom Sterritt https://codepen.io/tomsterritt/pen/sknpB */
-.container{padding:20px;margin:20px 0;}
-.bg{background:#167efb;color:#167efb;}
+.container{
+    /*padding:20px;*/
+    /*margin:20px 0;*/
+}
+.bg{
+    background:#167efb;
+    color:#167efb;
+}
 
 /* Radio group */
 .segmented {
