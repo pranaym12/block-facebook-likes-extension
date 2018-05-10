@@ -48,34 +48,28 @@ $(function(){
 		//For posts and comments, set text to the proper word based on chrome storage
 		//	using a 0-2 system. 0=hidden, 1=only likes hidden, 2=everything hidden
 		//" !=='undefined' " is how I ensure that it exists, even if it's a boolean!
-		if(typeof internal.post !== 'undefined'){ 
-			if(internal.post == 0){
-				post0status();
-			}
-			else if(internal.post == 1){
-				post1status();
-			}
-			else if(internal.post == 2){
-				post2status();
-			}
-			else{
-				$('#postStatus').text("Error #1!");
-			}
+		
+		//if(typeof internal.post !== 'undefined'){ 
+		if(internal.post == 0){
+			post0status();
+		}else if(internal.post == 1){
+			post1status();
+		}else if(internal.post == 2){
+			post2status();
+		}else{
+			post2status();
 		}
-		if(typeof internal.comment !== 'undefined'){
-			if(internal.comment == 0){
-				comment0status();
-			}
-			else if(internal.comment == 1){
-				comment1status();
-			}
-			else if(internal.comment == 2){
-				comment2status();
-			}
-			else{
-				$('#commentStatus').text("Error #2!");
-			}
+		
+		if(internal.comment == 0){
+			comment0status();
+		}else if(internal.comment == 1){
+			comment1status();
+		}else if(internal.comment == 2){
+			comment2status();
+		}else{
+			comment2status();
 		}
+		
 	});
 
 	//For each of the 6 buttons (3 each P and C) do the same thing:
