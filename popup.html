@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Facebook Likes Hider </title>
+		<title>Hide Facebook Likes</title>
 		<script src = "jquery-3.3.1.min.js"></script>
 		<script src="popup.js"></script>
+		<link rel="stylesheet" href="popup.css">
+		<script src="segmented-control.js"></script>
+		<link rel="stylesheet" href="segmented-control.css">
 	</head>
 	<body>
 		<h1>Facebook Likes Hider</h1>
 		<div class = "post-group">
-			<div class = "post-button-group">
-				<button name="post-unhide">Posts Unhide All</button>
-				<button name="post-hide-likes">Posts Hide Likes</button>
-				<button name="post-hide-all">Posts Hide All</button>
+			<h2>Posts</h2>	
+			<div class ="container">
+				<div class="segmented">
+					<label><input type="radio" id="post0" name="segmented" />Show All</label>
+					<label><input type="radio" id="post1" name="segmented" />Hide Partially</label>
+					<label><input type="radio" id="post2" name="segmented" />Hide all</label>
+				</div>
 			</div>
 			<h3 id="postHeader">Posts' likes are: <span id="postStatus">all hidden.</span></h3>
 		</div>
 		<div class = "comment-group">
-			<div class = "comment-button-group">
-				<button name="comment-unhide">Comments Unhide All</button>
-				<button name="comment-hide-likes">Comments Hide Likes</button>
-				<button name="comment-hide-all">Comments Hide All</button>
+			<h2>Comments</h2>
+			<div class = "container">
+				<div class ="segmented">
+					<label><input type="radio" id="comment0" name="segmented" />Show All</label>
+					<label><input type="radio" id="comment1" name="segmented" />Hide Partially</label>
+					<label><input type="radio" id="comment2" name="segmented" />Hide All</label>
+				</div>
 			</div>
 			<h3 id="commentHeader">Comments' likes are: <span id="commentStatus">all hidden.</span></h3>
 		</div>
-		<button name ="resetButton">Reset Button</button>
-		
-		
 	</body>
 </html>
+
+		
