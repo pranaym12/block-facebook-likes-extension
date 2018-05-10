@@ -11,14 +11,14 @@ function post0status(){
 
 	$('#post1').parent().addClass("checked");
 	$('#post0').removeClass("checked");
-	$('#comment2').removeClass("checked");
+	$('#post2').removeClass("checked");
 }function post2status(){
 	$('#postStatus').text("all is hidden");
 	$("#post2").checked = true;
 
 	$('#post2').parent().addClass("checked");
-	$('#comment1').removeClass("checked");
-	$('#comment0').removeClass("checked");
+	$('#post1').removeClass("checked");
+	$('#post0').removeClass("checked");
 }
 function comment0status(){
 	$('#commentStatus').text("unhidden");
