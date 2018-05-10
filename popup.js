@@ -7,7 +7,7 @@ function post0status(){
 	updateSC("post", 0);
 }function post1status(){
 	$('#postStatus').text("likes hidden");
-	/*$("#post1").checked = true;
+	/*$("#post1").checked = true; 
 	$('#post1').parent().addClass("checked");
 	$('#post0').removeClass("checked");
 	$('#post2').removeClass("checked");*/
