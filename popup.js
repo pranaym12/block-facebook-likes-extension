@@ -1,46 +1,27 @@
+//When popup loads and button clicks,
+//update the "post" or "commentStatus", and the Segmented Control on popup
 function post0status(){
 	$('#postStatus').text("unhidden");
-	/*$("#post0").checked = true;
-	$('#post0').parent().addClass("checked");
-	$('#post1').removeClass("checked");
-	$('#post2').removeClass("checked");	*/
 	updateSC("post", 0);
 }function post1status(){
 	$('#postStatus').text("only likes hidden");
-	/*$("#post1").checked = true; 
-	$('#post1').parent().addClass("checked");
-	$('#post0').removeClass("checked");
-	$('#post2').removeClass("checked");*/
 	updateSC("post", 1);
 }function post2status(){
 	$('#postStatus').text("all hidden");
-	/*$("#post2").checked = true;
-	$('#post2').parent().addClass("checked");
-	$('#post1').removeClass("checked");
-	$('#post0').removeClass("checked");*/
 	updateSC("post", 2);
-}function comment0status(){
+}
+
+function comment0status(){
 	$('#commentStatus').text("unhidden");
-	/*$("#comment1").checked = true;
-	$('#comment0').parent().addClass("checked");
-	$('#comment1').removeClass("checked");
-	$('#comment2').removeClass("checked");*/
 	updateSC("comment", 0);
 }function comment1status(){
 	$('#commentStatus').text("only likes hidden");
-	/*$("#comment1").checked = true;
-	$('#comment1').parent().addClass("checked");
-	$('#comment0').removeClass("checked");
-	$('#comment2').removeClass("checked");*/
 	updateSC("comment", 1);
 }function comment2status(){
 	$('#commentStatus').text("all  hidden");
-	/*$("#comment2").checked = true;
-	$('#comment2').parent().addClass("checked");
-	$('#comment1').removeClass("checked");
-	$('#comment0').removeClass("checked");*/
 	updateSC("comment", 2);
 }
+
 $(function(){//On startup
 	//Check for existing stored values, and set text in popup to that
 	chrome.storage.sync.get(['post', 'comment'], function(internal){
@@ -209,3 +190,37 @@ function updateSC(pC, num){
 		comment2status();
 	});
 */
+
+/*
+//ACTIVATING SEGMENTED CONTROL FOR EACH BUTTON
+//MADE REDUNDANT BY "updateSC()" FUNCTION*/
+
+	/*$("#post0").checked = true;
+	$('#post0').parent().addClass("checked");
+	$('#post1').removeClass("checked");
+	$('#post2').removeClass("checked");	*/
+
+	/*$("#post1").checked = true; 
+	$('#post1').parent().addClass("checked");
+	$('#post0').removeClass("checked");
+	$('#post2').removeClass("checked");*/
+
+	/*$("#post2").checked = true;
+	$('#post2').parent().addClass("checked");
+	$('#post1').removeClass("checked");
+	$('#post0').removeClass("checked");*/
+
+	/*$("#comment1").checked = true;
+	$('#comment0').parent().addClass("checked");
+	$('#comment1').removeClass("checked");
+	$('#comment2').removeClass("checked");*/
+
+	/*$("#comment1").checked = true;
+	$('#comment1').parent().addClass("checked");
+	$('#comment0').removeClass("checked");
+	$('#comment2').removeClass("checked");*/
+
+	/*$("#comment2").checked = true;
+	$('#comment2').parent().addClass("checked");
+	$('#comment1').removeClass("checked");
+	$('#comment0').removeClass("checked");*/
