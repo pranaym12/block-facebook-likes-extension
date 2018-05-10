@@ -1,17 +1,34 @@
 function post0status(){
 	$('#postStatus').text("unhidden");
-}
-function post1status(){
+}function post1status(){
 	$('#postStatus').text("likes hidden");
 }function post2status(){
 	$('#postStatus').text("all is hidden");
 }
 function comment0status(){
 	$('#commentStatus').text("unhidden");
+	//$("#comment0").prop("checked", true);
+	$("#comment1").checked = true;
+
+	$('#comment0').parent().addClass("checked");
+	$('#comment1').removeClass("checked");
+	$('#comment2').removeClass("checked");
 }function comment1status(){
 	$('#commentStatus').text("likes hidden");
+	//$("#comment1").prop("checked", true);
+	$("#comment1").checked = true;
+
+	$('#comment1').parent().addClass("checked");
+	$('#comment0').removeClass("checked");
+	$('#comment2').removeClass("checked");
 }function comment2status(){
 	$('#commentStatus').text("all is hidden");
+	//$("#comment2").prop("checked", true);
+	$("#comment2").checked = true;
+
+	$('#comment2').parent().addClass("checked");
+	$('#comment1').removeClass("checked");
+	$('#comment0').removeClass("checked");
 }
 $(function(){
 	//Check for existing stored values, and set text in popup to that
@@ -87,7 +104,41 @@ $(function(){
 		post2status();
 	});
 
+	//Buttons for the Comments
+	$('#comment0').click(function(){
 
+		var newComment = 0;
+		chrome.storage.sync.set({'comment': newComment});
+		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
+			chrome.tabs.sendMessage(tabs[0].id, {
+				commentMsg: 0
+			});				
+		});
+		comment0status();
+	});
+	$('#comment1').click(function(){
+		var newComment = 1;
+		chrome.storage.sync.set({'comment': newComment});
+		chrome.tabs.query({active:true, currentWindow:true},function(tabs){
+			chrome.tabs.sendMessage(tabs[0].id, {
+				commentMsg: 1
+			});				
+		});
+		comment1status();
+	});
+	$('#comment2').click(function(){	
+			var newComment = 2;
+			chrome.storage.sync.set({'comment': newComment});
+			chrome.tabs.query({active:true, currentWindow:true},function(tabs){
+				chrome.tabs.sendMessage(tabs[0].id, {
+					commentMsg: 2
+				});				
+			});
+			comment2status();
+	});
+});
+
+/*
 	//Buttons for the Comments
 	$("button[name='comment-unhide'").click(function(){
 		var newComment = 0;
@@ -119,4 +170,4 @@ $(function(){
 		});
 		comment2status();
 	});
-});
+*/
