@@ -162,7 +162,7 @@ function updateSC(pC, num){
 	}
 	//Then fill in all the things that need to be done if pC==post"||comment"	
 	if(pC == "post" || pC == "comment"){
-		pC = "#" + pC;
+		pC = "#" + pC; //becomes #post or #comment
 		$(pC+str).checked=true; //'Check' the physical input-radio
 		//class "checked" creates segmented-control bar
 		$(pC+str).parent().addClass("checked");

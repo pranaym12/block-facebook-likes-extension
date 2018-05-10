@@ -7,8 +7,8 @@
     display:flex;
     flex-flow:row wrap;
     box-sizing:border-box;
-    font-family:"Helvetica Neue";
-    font-size:90%;
+    /*font-family:"Helvetica";
+    font-size:120%;*/
     text-align:center;
 }
 .segmented label {
