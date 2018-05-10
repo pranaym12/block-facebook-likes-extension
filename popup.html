@@ -12,36 +12,25 @@
 		<h1>Facebook Likes Hider</h1>
 		<div class = "post-group">
 			<h2>Posts</h2>	
-			
-			<button name="post-unhide">Show All Likes</button>
-			<button name="post-hide-likes">Hide Partially</button>
-			<button name="post-hide-all">Totally Hide Likes</button>
-
+			<div class ="container">
+				<div class="segmented">
+					<label><input type="radio" id="post0" name="segmented" />Show All</label>
+					<label><input type="radio" id="post1" name="segmented" />Hide Partially</label>
+					<label><input type="radio" id="post2" name="segmented" />Hide all</label>
+				</div>
+			</div>
 			<h3 id="postHeader">Posts' likes are: <span id="postStatus">all hidden.</span></h3>
-		
 		</div>
 		<div class = "comment-group">
 			<h2>Comments</h2>
-			<div class = "comment-button-group">
-				<button name="comment-unhide">Show All Likes</button>
-				<button name="comment-hide-likes">Hide Partially</button>
-				<button name="comment-hide-all">Comments Hide All</button>
+			<div class = "container">
+				<div class ="segmented">
+					<label><input type="radio" id="comment0" name="segmented" />Show All</label>
+					<label><input type="radio" id="comment1" name="segmented" />Hide Partially</label>
+					<label><input type="radio" id="comment2" name="segmented" />Hide All</label>
+				</div>
 			</div>
 			<h3 id="commentHeader">Comments' likes are: <span id="commentStatus">all hidden.</span></h3>
-		</div>
-
-		<div class="container">
-			  <div class="segmented-control" style="width: 100%; color: #5FBAAC">
-			    <input type="radio" name="sc-1-1" id="sc-1-1-1">
-			    <input type="radio" name="sc-1-1" id="sc-1-1-2">
-			    <input type="radio" name="sc-1-1" id="sc-1-1-3" checked>
-			    <input type="radio" name="sc-1-1" id="sc-1-1-4">
-
-			    <label for="sc-1-1-1" data-value="Lorem Ipsum">Lorem Ipsum</label>
-			    <label for="sc-1-1-2" data-value="Risus Purus">Risus Purus</label>
-			    <label for="sc-1-1-3" data-value="Pellentesque Porta">Pellentesque Porta</label>
-			    <label for="sc-1-1-4" data-value="Fringilla">Fringilla</label>
-			  </div>
 		</div>
 	</body>
 </html>
