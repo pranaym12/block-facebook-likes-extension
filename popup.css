@@ -1,23 +1,22 @@
 body{
 	min-width: 320px;
 	/*background: #e9ebee; */ /*Facebook background*/
-	background: #fcfcfc;
+	/*background: #fcfcfc;*/ /*Slightly lighter gray*/
 	background: #F2F2F2;
 	text-align:center;
 }
 h1{
-	color: #000080; /*Steel blue*/
-	color: #fb3416; /*bright orange*/
-	color: #c516fb; /*purple*/
-	color: #167efb; /*Bright blue*/
-	color: #1543fc; /*Slightly darker blue*/
+	color: #1543fc; /*Slightly dark blue*/
 	font-size: 30px;
 	text-align: center;
-	font-family: Tahoma;
+	font-family: Roboto;
 }
 h2, h3{
 	text-align:left;
-	color: #fb164b;
+	/*color: #fb164b;*/ /*Reddish*/
+	color: #6666ff;
+	color: #4c4cff;
+	color: #3232ff;
 }
 .segmented { /*affects the segmented-control*/
 	font-family:"Helvetica";
