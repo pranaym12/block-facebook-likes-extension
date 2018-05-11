@@ -13,7 +13,10 @@ h1{
 }
 h2, h3{
 	text-align:left;
-	color: #fb164b;
+	/*color: #fb164b;*/ /*Reddish*/
+	color: #6666ff;
+	color: #4c4cff;
+	color: #3232ff;
 }
 .segmented { /*affects the segmented-control*/
 	font-family:"Helvetica";
