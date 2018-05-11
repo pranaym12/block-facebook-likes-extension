@@ -7,9 +7,10 @@ body{
 }
 h1{
 	color: #1543fc; /*Slightly dark blue*/
-	font-size: 30px;
+	font-size: 32px;
 	text-align: center;
 	font-family: Roboto;
+	font-weight:bold;
 }
 h2, h3{
 	text-align:left;
