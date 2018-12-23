@@ -3,7 +3,7 @@
 	"name": "Hide Facebook Likes",
 	"version": "1.1",
 	"description": "Hide other people's likes from your Facebook for a better experience.",
-	"permissions": ["*://*.facebook.com/*"],
+	"permissions": ["*://*.facebook.com/*", "storage"],
 	"content_scripts": [
 		{
 			"matches": ["*://*.facebook.com/*"],
@@ -25,8 +25,5 @@
 	"background": {
 		"scripts": ["eventPage.js"],
 		"persistent": false
-	},
-	"permissions": [
-		"storage"
-	]
+	}
 }
